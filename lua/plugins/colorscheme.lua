@@ -8,6 +8,8 @@ return {
 		auto_integrations = true,
 		integrations = {
 			flash = true,
+			grug_far = true,
+			gitsigns = true,
 			lsp_trouble = true,
 			noice = true,
 			snacks = { enabled = true },
