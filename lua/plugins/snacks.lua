@@ -1,37 +1,47 @@
 return {
-	"folke/snacks.nvim",
-	priority = 1000,
-	lazy = false,
-	---@type snacks.Config
-	opts = {
-		bigfile = { enabled = true },
-		dashboard = {
-			preset = {
+  "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
+  ---@type snacks.Config
+  opts = {
+    bigfile = { enabled = true },
+    dashboard = {
+      preset = {
         -- stylua: ignore
         keys = {
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
           { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-          { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
-			},
-		},
-		indent = { animate = { enabled = false } },
-		input = { enabled = true },
-		picker = {
-			enabled = true,
-		},
-		notifier = { enabled = true },
-		quickfile = { enabled = true },
-		scope = { enabled = true },
-		statuscolumn = { enabled = true },
-		toggle = { enabled = true },
-	},
-	keys = {
+        header = [[
+███████╗██╗  ██╗██╗████████╗██╗   ██╗██╗███╗   ███╗        
+██╔════╝██║  ██║██║╚══██╔══╝██║   ██║██║████╗ ████║     yum
+███████╗███████║██║   ██║   ██║   ██║██║██╔████╔██║    yum 
+╚════██║██╔══██║██║   ██║   ╚██╗ ██╔╝██║██║╚██╔╝██║  yum   
+███████║██║  ██║██║   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║        
+╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝        ]],
+      },
+      sections = {
+        { section = "header", padding = 3, indent = 5 },
+        { section = "keys", gap = 1, padding = 2 },
+        { section = "startup" },
+      },
+    },
+    indent = { animate = { enabled = false } },
+    input = { enabled = true },
+    picker = {
+      enabled = true,
+    },
+    notifier = { enabled = true },
+    quickfile = { enabled = true },
+    scope = { enabled = true },
+    statuscolumn = { enabled = true },
+    toggle = { enabled = true },
+  },
+  keys = {
     -- stylua: ignore start
     -- Top Pickers & Explorer
     { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
@@ -99,6 +109,6 @@ return {
 		-- Buffers
 		{ "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" } },
 		{ "<leader>bo", function() Snacks.bufdelete.other() end, { desc = "Delete Other Buffers" } },
-		-- stylua: ignore end
-	},
+    -- stylua: ignore end
+  },
 }

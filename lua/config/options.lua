@@ -9,7 +9,7 @@ opt.relativenumber = true
 opt.mouse = "a"
 opt.showmode = false
 vim.schedule(function()
-	vim.o.clipboard = "unnamedplus"
+  vim.o.clipboard = "unnamedplus"
 end)
 opt.conceallevel = 2
 opt.wrap = false
