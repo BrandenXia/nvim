@@ -17,6 +17,7 @@ return {
 			mini = { enabled = true },
 			blink_cmp = { style = "bordered" },
 			mason = true,
+			which_key = true,
 		},
 	},
 	config = function(_, opts)
