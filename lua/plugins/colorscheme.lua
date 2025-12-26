@@ -11,6 +11,7 @@ return {
 			grug_far = true,
 			gitsigns = true,
 			lsp_trouble = true,
+			neogit = true,
 			noice = true,
 			snacks = { enabled = true },
 			mini = { enabled = true },
