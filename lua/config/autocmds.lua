@@ -129,7 +129,7 @@ autocmd("BufWritePre", {
   group = augroup("autoformat"),
   callback = function()
     if vim.g.autoformat then
-      require("conform").format({ timeout_ms = 3000 })
+      require("conform").format()
     end
   end,
 })
