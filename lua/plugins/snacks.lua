@@ -40,6 +40,7 @@ return {
     scope = { enabled = true },
     statuscolumn = { enabled = true },
     toggle = { enabled = true },
+    words = { enabled = true },
   },
   keys = {
     -- stylua: ignore start
