@@ -94,9 +94,6 @@ local added_keymaps = {
   { "n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" } },
   { "n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" } },
 
-  -- toggle options
-  -- { "n", "<leader>uf", toggle_option("auto_format"), { desc = "Toggle Auto Format" } },
-
   -- clear hlsearch on escape
   {
     { "i", "n", "s" },
