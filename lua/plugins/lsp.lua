@@ -131,6 +131,12 @@ return {
         end
       end)
 
+      -- folds
+      Snacks.util.lsp.on({ method = "textDocument/foldingRange" }, function()
+        local win = vim.api.nvim_get_current_win()
+        vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+      end)
+
       -- codelens
       -- Snacks.util.lsp.on({ method = "textDocument/codeLens" }, function(buffer)
       -- 	vim.lsp.codelens.refresh()

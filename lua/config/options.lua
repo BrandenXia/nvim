@@ -38,5 +38,10 @@ opt.termguicolors = true
 opt.virtualedit = "block"
 opt.winminwidth = 5
 
+-- treesitter folds
+vim.o.foldlevelstart = 99
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
 -- custom global variables
 vim.g.autoformat = true
