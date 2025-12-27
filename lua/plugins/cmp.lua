@@ -1,7 +1,7 @@
 return {
   "saghen/blink.cmp",
   event = { "BufReadPost", "BufNewFile" },
-  version = "1.*",
+  version = "*",
   dependencies = { "xzbdmw/colorful-menu.nvim", opts = {} },
   opts_extend = {
     "sources.completion.enabled_providers",

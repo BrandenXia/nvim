@@ -5,7 +5,7 @@ return {
   opts = {
     flavour = "macchiato",
     transparent_background = true,
-    auto_integrations = true,
+    auto_integrations = false,
     integrations = {
       flash = true,
       grug_far = true,
