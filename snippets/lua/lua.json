@@ -1,0 +1,7 @@
+{
+  "ignore": {
+    "prefix": "--ign",
+    "body": "-- stylua: ignore",
+    "description": "Add a stylua ignore comment"
+  }
+}
