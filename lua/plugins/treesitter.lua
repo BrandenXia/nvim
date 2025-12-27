@@ -7,6 +7,9 @@ return {
   cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
   opts_extend = { "ensure_installed" },
   opts = {
+    indent = { enable = true },
+    highlight = { enable = true },
+    folds = { enable = true },
     ensure_installed = {
       "bash",
       "c",
@@ -34,4 +37,13 @@ return {
       "yaml",
     },
   },
+  config = function(_, opts)
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = opts.ensure_installed,
+      -- stylua: ignore
+      callback = function() vim.treesitter.start() end,
+    })
+
+    require("nvim-treesitter").setup(opts)
+  end,
 }
