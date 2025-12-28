@@ -1,16 +1,16 @@
 return {
-  "NeogitOrg/neogit",
-  lazy = true,
-  dependencies = {
-    "nvim-lua/plenary.nvim", -- required
-    "sindrets/diffview.nvim", -- optional - Diff integration
-    "folke/snacks.nvim", -- optional
+  {
+    "NeogitOrg/neogit",
+    lazy = true,
+    cmd = "Neogit",
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
+    },
+    opts = {
+      graph_style = "kitty",
+    },
   },
-  cmd = "Neogit",
-  keys = {
-    { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
-  },
-  opts = {
-    graph_style = "kitty",
-  },
+  { "nvim-lua/plenary.nvim", lazy = true },
+  { "sindrets/diffview.nvim", lazy = true },
+  { "folke/snacks.nvim" },
 }
