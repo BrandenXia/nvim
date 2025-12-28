@@ -106,6 +106,12 @@ return {
             format = true,
           },
         },
+        tailwindcss = {
+          -- exclude a filetype from the default_config
+          filetypes_exclude = { "markdown" },
+          -- add additional filetypes to the default_config
+          filetypes_include = {},
+        },
       },
       setup = {
         vtsls = function(_, opts)
@@ -184,6 +190,21 @@ return {
           -- copy typescript settings to javascript
           opts.settings.javascript =
             vim.tbl_deep_extend("force", {}, opts.settings.typescript, opts.settings.javascript or {})
+        end,
+        tailwindcss = function(_, opts)
+          opts.filetypes = opts.filetypes or {}
+
+          -- Add default filetypes
+          vim.list_extend(opts.filetypes, vim.lsp.config.tailwindcss.filetypes)
+
+          -- Remove excluded filetypes
+          --- @param ft string
+          opts.filetypes = vim.tbl_filter(function(ft)
+            return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
+          end, opts.filetypes)
+
+          -- Add additional filetypes
+          vim.list_extend(opts.filetypes, opts.filetypes_include or {})
         end,
       },
     },
