@@ -15,6 +15,7 @@ return {
       neogit = true,
       noice = true,
       notify = true,
+      render_markdown = true,
       snacks = { enabled = true },
       mini = { enabled = true },
       blink_cmp = { style = "bordered" },

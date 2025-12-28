@@ -2,7 +2,7 @@ return {
   "stevearc/conform.nvim",
   lazy = true,
   cmd = "ConformInfo",
-  opts_extend = { "formatters_by_ft.*.keys" },
+  opts_extend = { "formatters_by_ft.*.keys", "formatters.*.keys" },
   opts = {
     default_format_opts = {
       timeout_ms = 3000,
