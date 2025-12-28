@@ -59,7 +59,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = true,
-    opts_extend = { "servers.*.keys" },
+    opts_extend = { "servers.*.keys", "setup.*.keys" },
     opts = {
       servers = {
         ["*"] = {
