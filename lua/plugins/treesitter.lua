@@ -41,9 +41,13 @@ return {
     require("nvim-treesitter").install(opts.ensure_installed)
 
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = opts.ensure_installed,
-      -- stylua: ignore
-      callback = function() vim.treesitter.start() end,
+      group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),
+      callback = function(evt)
+        local lang = vim.treesitter.language.get_lang(evt.match)
+        if vim.tbl_contains(opts.ensure_installed, lang) then
+          pcall(vim.treesitter.start, evt.buf)
+        end
+      end,
     })
   end,
 }
