@@ -18,7 +18,7 @@ return {
       end
     end,
   },
-  { "nvim-mini/mini.ai", event = "VeryLazy", version = "*", config = true },
+  { "nvim-mini/mini.ai", event = "VeryLazy", version = "*", opts = {} },
   {
     "nvim-mini/mini.pairs",
     version = "*",
@@ -40,7 +40,6 @@ return {
     "nvim-mini/mini.surround",
     version = "*",
     event = "VeryLazy",
-    config = true,
     opts = {
       mappings = {
         add = "gsa", -- Add surrounding in Normal and Visual modes
