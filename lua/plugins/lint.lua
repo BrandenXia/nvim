@@ -6,6 +6,7 @@ return {
     -- Event to trigger linters
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
     linters_by_ft = {},
+    linters = {},
   },
   config = function(_, opts)
     local M = {}
