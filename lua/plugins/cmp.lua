@@ -47,6 +47,9 @@ return {
         },
       },
     },
+    sources = {
+      default = { "lsp", "path", "snippets", "buffer" },
+    },
     keymap = {
       preset = "enter",
     },
