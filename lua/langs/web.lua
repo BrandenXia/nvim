@@ -52,6 +52,18 @@ M.has_parser = utils.memoize(M.has_parser)
 
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "javascript",
+        "typescript",
+        "tsx",
+        "html",
+        "css",
+      },
+    },
+  },
+  {
     "mason-org/mason.nvim",
     opts = { ensure_installed = { "prettier" } },
   },
