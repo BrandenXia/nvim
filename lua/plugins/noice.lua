@@ -2,6 +2,32 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
+    routes = {
+      {
+        view = "split",
+        filter = {
+          event = "msg_show",
+          kind = {
+            "shell_out",
+            "shell_err",
+          },
+        },
+        opts = {
+          -- slightly modified version of `details` format used in `cmdline_output` view
+          format = {
+            "{level} ",
+            "{date} ",
+            "{event}",
+            { "{kind}", before = { ".", hl_group = "NoiceFormatKind" } },
+            " ",
+            "{title} ",
+            "{cmdline} ",
+            "\n",
+            "{message}",
+          },
+        },
+      },
+    },
     lsp = {
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
       override = {
