@@ -29,7 +29,14 @@ Snacks.toggle({
   set = function (value) vim.wo.wrap = value end,
 }):map("<leader>uw")
 
-local deleted_keymaps = {}
+local deleted_keymaps = {
+  { "n", "grn" },
+  { "n", "grr" },
+  { "n", "gri" },
+  { "n", "gra" },
+  { "n", "grt" },
+  { "n", "gc" },
+}
 
 local added_keymaps = {
   -- lazy.nvim
@@ -96,7 +103,7 @@ local added_keymaps = {
 
   -- clear hlsearch on escape
   {
-    { "i", "n", "s" },
+    { "n", "s" },
     "<esc>",
     function()
       vim.cmd("noh")
