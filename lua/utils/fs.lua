@@ -1,6 +1,6 @@
 local M = {}
 
-local root_markers = { ".git" }
+local root_markers = { ".git", ".editorconfig" }
 
 function M.get_root_dir()
   return vim.lsp.buf.list_workspace_folders()[1] or vim.fs.root(0, root_markers) or vim.fn.getcwd()
