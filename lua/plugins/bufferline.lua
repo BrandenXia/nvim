@@ -31,11 +31,6 @@ return {
             .. (diag.warning and icons.Warn .. diag.warning or "")
           return vim.trim(ret)
         end,
-        custom_filter = function(buf, _)
-          if vim.bo[buf].filetype ~= "compilation" then
-            return true
-          end
-        end,
         offsets = {
           { filetype = "snacks_layout_box" },
         },

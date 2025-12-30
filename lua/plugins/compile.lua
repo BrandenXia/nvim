@@ -3,22 +3,35 @@ return {
   -- enable color
   { "m00qek/baleia.nvim", tag = "v1.3.0", lazy = true },
   {
-    "ej-shafran/compile-mode.nvim",
-    version = "^5.0.0",
-    cmd = { "Compile", "Recompile" },
+    "BrandenXia/compile-mode.nvim",
+    version = false,
+    branch = "flexible-default-command",
+    -- version = "^5.0.0",
+    cmd = { "Compile" },
     keys = {
-      { "<C-a>", "<cmd>Recompile<CR>", desc = "Recompile" },
-      { "<C-S-a>", "<cmd>Compile<CR>", desc = "Recompile" },
+      {
+        "<C-e>",
+        "<cmd>Recompile<CR>",
+        desc = "Compile",
+      },
     },
     config = function()
       ---@module "compile-mode"
       ---@type CompileModeOpts
       vim.g.compile_mode = {
-        default_command = "",
+        default_command = {
+          python = "python %",
+          lua = "lua %",
+          javascript = "bun %",
+          typescript = "bun %",
+          c = "cc -x c -o %:r % && %:p:r",
+          cpp = "cc -x c++ -std=c++23 -o %:r % && %:p:r",
+        },
         baleia_setup = true,
         bang_expansion = true,
         recompile_no_fail = true,
-        focus_compilation_buffer = true,
+        focus_compilation_buffer = false,
+        hidden_buffer = true,
       }
     end,
   },
