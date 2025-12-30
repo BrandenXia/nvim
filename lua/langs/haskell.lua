@@ -41,12 +41,11 @@ return {
     },
   },
   {
-    "mason-org/mason.nvim",
-    opts = { ensure_installed = { "haskell-language-server" } },
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
+      servers = {
+        hls = {},
+      },
       setup = {
         -- stylua: ignore
         hls = function() return true end,
