@@ -48,6 +48,10 @@ local added_keymaps = {
   { { "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true } },
   { { "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true } },
 
+  -- better indenting
+  { "x", "<", "<gv", { desc = "Indent Left" } },
+  { "x", ">", ">gv", { desc = "Indent Right" } },
+
   -- easy delete during edit
   { "i", "<Esc><BS>", "<C-w>", { desc = "Delete previous word" } },
 
