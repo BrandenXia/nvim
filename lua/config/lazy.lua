@@ -32,6 +32,9 @@ require("lazy").setup({
     version = false,
   },
   -- Configure any other settings here. See the documentation for more details.
+  dev = {
+    path = "~/code/nvim-plugins",
+  },
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "catppuccin" } },
   -- automatically check for plugin updates
