@@ -5,7 +5,7 @@ return {
   {
     "BrandenXia/compile-mode.nvim",
     version = false,
-    branch = "flexible-default-command",
+    branch = "main",
     -- version = "^5.0.0",
     cmd = { "Compile" },
     keys = {
@@ -32,6 +32,7 @@ return {
         recompile_no_fail = true,
         focus_compilation_buffer = false,
         hidden_buffer = true,
+        use_pseudo_terminal = true,
       }
     end,
   },
