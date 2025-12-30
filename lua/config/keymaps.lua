@@ -52,6 +52,10 @@ local added_keymaps = {
   { "x", "<", "<gv", { desc = "Indent Left" } },
   { "x", ">", ">gv", { desc = "Indent Right" } },
 
+  -- commenting
+  { "n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" } },
+  { "n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" } },
+
   -- easy delete during edit
   { "i", "<Esc><BS>", "<C-w>", { desc = "Delete previous word" } },
 
