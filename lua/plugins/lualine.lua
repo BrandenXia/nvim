@@ -1,4 +1,4 @@
-local get_root_dir = require("utils.fs").get_root_dir
+local get_root_dir = require("utils.fs").get_root_name
 
 local function root_dir_component()
   return {

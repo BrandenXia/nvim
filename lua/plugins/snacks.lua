@@ -45,7 +45,7 @@ return {
   keys = {
     -- stylua: ignore start
     -- Top Pickers & Explorer
-    { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+    { "<leader><space>", function() Snacks.picker.files({ cwd = require("utils.fs").get_root_dir() }) end, desc = "Find Files at Project Root" },
     { "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
@@ -110,6 +110,8 @@ return {
 		-- Buffers
 		{ "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" } },
 		{ "<leader>bo", function() Snacks.bufdelete.other() end, { desc = "Delete Other Buffers" } },
+    -- Scratch
+    { "<leader>S", function() Snacks.scratch() end, desc = "Open Scratch Buffer" },
     -- stylua: ignore end
   },
 }
