@@ -5,11 +5,9 @@ return {
   build = ":TSUpdate",
   event = "VeryLazy",
   cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
-  opts_extend = { "ensure_installed" },
+  opts_extend = { "ensure_installed", "disable" },
   opts = {
-    indent = { enable = true },
-    highlight = { enable = true },
-    folds = { enable = true },
+    disable = {},
     ensure_installed = {
       "bash",
       "c",
@@ -44,7 +42,7 @@ return {
       group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),
       callback = function(evt)
         local lang = vim.treesitter.language.get_lang(evt.match)
-        if vim.tbl_contains(opts.ensure_installed, lang) then
+        if vim.tbl_contains(opts.ensure_installed, lang) and not vim.tbl_contains(opts.disable, lang) then
           pcall(vim.treesitter.start, evt.buf)
         end
       end,
