@@ -39,6 +39,9 @@ return {
     quickfile = { enabled = true },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
+    scratch = {
+      root = vim.fn.stdpath("run") .. "/scratch",
+    },
     toggle = { enabled = true },
     words = { enabled = true },
   },
