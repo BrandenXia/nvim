@@ -6,7 +6,7 @@
   "catppuccin": { "branch": "main", "commit": "ce8d176faa4643e026e597ae3c31db59b63cef09" },
   "clangd_extensions.nvim": { "branch": "main", "commit": "6fd7f12df71a04dd9ec398fc63aaa23fbe9f525f" },
   "colorful-menu.nvim": { "branch": "master", "commit": "b51a659459df8d078201aefc995db8175ed55e84" },
-  "compile-mode.nvim": { "branch": "main", "commit": "f3392b01a9a18426616b4ac6912a1f97e6b61b0d" },
+  "compile-mode.nvim": { "branch": "main", "commit": "835673545a01e987e9a596fa5b4216c5e4ad9cde" },
   "conform.nvim": { "branch": "master", "commit": "df83eeaab265dacd2eef139a78e502a3f8926618" },
   "copilot.lua": { "branch": "master", "commit": "e78d1ffebdf6ccb6fd8be4e6898030c1cf5f9b64" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
@@ -43,5 +43,5 @@
   "typst-preview.nvim": { "branch": "master", "commit": "e123a7ab64e52d836e00dea9251e85b201f38966" },
   "vim-kitty": { "branch": "main", "commit": "719405540a23419822ac2474e9dd6b407eb68b8a" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "e1b6cb3fe629090dd5cbda257f507469086d5658" }
+  "yazi.nvim": { "branch": "main", "commit": "c9cda9a0624ef480a455911ad8996fb06439bf4e" }
 }
