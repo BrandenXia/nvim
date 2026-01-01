@@ -3,10 +3,8 @@ return {
   -- enable color
   { "m00qek/baleia.nvim", tag = "v1.3.0", lazy = true },
   {
-    "BrandenXia/compile-mode.nvim",
-    version = false,
-    branch = "main",
-    -- version = "^5.0.0",
+    "ej-shafran/compile-mode.nvim",
+    version = "^5.0.0",
     cmd = { "Compile" },
     keys = {
       {
