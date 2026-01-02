@@ -8,7 +8,8 @@ return {
   },
   {
     "lervag/vimtex",
-    lazy = false, -- lazy-loading will disable inverse search
+    -- lazy = false, -- lazy-loading will disable inverse search
+    ft = "tex",
     config = function()
       vim.g.vimtex_view_method = "zathura"
       vim.g.vimtex_view_automatic = 1

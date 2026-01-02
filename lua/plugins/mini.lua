@@ -39,7 +39,7 @@ return {
   {
     "nvim-mini/mini.surround",
     version = "*",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
       mappings = {
         add = "gsa", -- Add surrounding in Normal and Visual modes
