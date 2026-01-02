@@ -2,9 +2,16 @@ return {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
+  ---@type CatppuccinOptions
   opts = {
     flavour = "macchiato",
     transparent_background = true,
+    styles = {
+      functions = { "italic" },
+      keywords = { "italic" },
+      properties = { "italic" },
+      types = { "italic" },
+    },
     auto_integrations = false,
     integrations = {
       diffview = true,
