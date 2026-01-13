@@ -1,0 +1,14 @@
+{
+  "guard": {
+    "prefix": "guard",
+    "body": [
+      "#ifndef ${1:HEADER_NAME}_H",
+      "#define ${1:HEADER_NAME}_H",
+      "",
+      "${0}",
+      "",
+      "#endif"
+    ],
+    "description": "Header guard for C++ header files"
+  }
+}
