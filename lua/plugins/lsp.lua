@@ -126,7 +126,7 @@ return {
         if
           vim.api.nvim_buf_is_valid(buffer)
           and vim.bo[buffer].buftype == ""
-          and not vim.tbl_contains({ "vue" }, vim.bo[buffer].filetype)
+          and not vim.tbl_contains({ "vue", "cabal" }, vim.bo[buffer].filetype)
         then
           vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
         end
