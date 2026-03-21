@@ -137,7 +137,7 @@ return {
 
     return {
       options = {
-        theme = "catppuccin",
+        theme = "catppuccin-nvim",
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "snacks_dashboard" } },
         component_separators = "",
