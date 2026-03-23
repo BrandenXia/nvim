@@ -11,9 +11,9 @@ return {
     -- lazy = false, -- lazy-loading will disable inverse search
     ft = "tex",
     config = function()
-      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_view_general_viewer = "kitten"
+      vim.g.vimtex_view_general_options = "@ launch --cwd=current bookokrat --zen-mode @pdf"
       vim.g.vimtex_view_automatic = 1
-      vim.g.vimtex_view_zathura_use_synctex = 0
       vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
       vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
     end,
