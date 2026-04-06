@@ -14,6 +14,8 @@ local diagnostic_goto = function(next, severity)
   end
 end
 
+vim.cmd("packadd nvim.undotree")
+
 Snacks.toggle({
   name = "Auto Format",
   -- stylua: ignore
@@ -109,6 +111,9 @@ local added_keymaps = {
   { "n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" } },
   { "n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" } },
 
+  -- undotree
+  { "n", "<leader>U", require("undotree").open, { desc = "Toggle Undotree" } },
+
   -- clear hlsearch on escape
   {
     { "n", "s" },
@@ -118,6 +123,33 @@ local added_keymaps = {
       return "<esc>"
     end,
     { expr = true, desc = "Escape and Clear hlsearch" },
+  },
+
+  -- incremental selection treesitter/lsp
+  {
+    { "n", "x", "o" },
+    "<A-o>",
+    function()
+      if vim.treesitter.get_parser(nil, nil, { error = false }) then
+        require("vim.treesitter._select").select_parent(vim.v.count1)
+      else
+        vim.lsp.buf.selection_range(vim.v.count1)
+      end
+    end,
+    { desc = "Select parent treesitter node or outer incremental lsp selections" },
+  },
+
+  {
+    { "n", "x", "o" },
+    "<A-i>",
+    function()
+      if vim.treesitter.get_parser(nil, nil, { error = false }) then
+        require("vim.treesitter._select").select_child(vim.v.count1)
+      else
+        vim.lsp.buf.selection_range(-vim.v.count1)
+      end
+    end,
+    { desc = "Select child treesitter node or inner incremental lsp selections" },
   },
 }
 
