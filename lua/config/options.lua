@@ -57,3 +57,28 @@ o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- custom global variables
 vim.g.autoformat = true
+
+if vim.g.neovide then
+  vim.g.neovide_input_macos_option_key_is_meta = "only_left"
+
+  vim.g.neovide_opacity = 0.8
+  vim.g.neovide_normal_opacity = 0.8
+  vim.g.neovide_window_blurred = true
+  vim.g.neovide_floating_blur_amount_x = 20
+  vim.g.neovide_floating_blur_amount_y = 20
+
+  vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h13"
+  vim.opt.linespace = 8
+
+  vim.g.neovide_padding_top = 5
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 5
+  vim.g.neovide_padding_left = 5
+
+  vim.g.neovide_theme = "dark"
+
+  vim.g.neovide_show_border = false
+
+  vim.g.neovide_scroll_animation_length = 0
+  vim.g.neovide_cursor_animation_length = 0
+end

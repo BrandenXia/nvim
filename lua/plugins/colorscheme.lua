@@ -5,7 +5,7 @@ return {
   ---@type CatppuccinOptions
   opts = {
     flavour = "macchiato",
-    transparent_background = true,
+    transparent_background = not vim.g.neovide,
     styles = {
       functions = { "italic" },
       keywords = { "italic" },
