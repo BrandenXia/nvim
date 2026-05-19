@@ -70,7 +70,7 @@ if vim.g.neovide then
   vim.o.guifont = "CaskaydiaCove Nerd Font Mono:h13"
   vim.opt.linespace = 8
 
-  vim.g.neovide_padding_top = 5
+  vim.g.neovide_padding_top = 20
   vim.g.neovide_padding_bottom = 0
   vim.g.neovide_padding_right = 5
   vim.g.neovide_padding_left = 5
